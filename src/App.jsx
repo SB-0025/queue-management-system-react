@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "./componenets/Form";
 import Display from "./componenets/Display.jsx";
-import "./App.css";
+
 const App = () => {
   const [queue, setQueue] = useState([]);
 
