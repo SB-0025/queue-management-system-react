@@ -1,4 +1,5 @@
 # Queue Management System 📋
+**Version:** v1.1.0
 
 Queue Management System is a React-based application that follows the FIFO (First In, First Out) principle.  
 It allows users to add customers, assign services, update queue status, and manage customer flow efficiently.
@@ -11,6 +12,8 @@ It allows users to add customers, assign services, update queue status, and mana
 - Assign services to customers
 - Update customer status (waiting → serving → complete)
 - Remove customers from the queue
+- Filter customers by status using derived state
+
 
 
 ## Tech Stack
