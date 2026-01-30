@@ -1,18 +1,17 @@
-import React from "react";
+const Display = ({ filteredQueue, updateStatus, deleteQueue }) => {
 
-const Display = ({ queue, updateStatus, deleteQueue }) => {
-  // console.log(data);
+
 
   return (
     <>
       <section className="queue-display">
         <h2>Queue Display</h2>
 
-        {queue.length === 0 ? (
+        {filteredQueue.length === 0 ? (
           <p className="empty-queue">No Customer Data</p>
         ) : (
           <div className="queue-list">
-            {queue.map((customer) => (
+            {filteredQueue.map((customer) => (
               <div className="queue-item" key={customer.id}>
                 <div className="customer-info">
                   <h3>{customer.name}</h3>
