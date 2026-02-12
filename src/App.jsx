@@ -10,6 +10,7 @@ const App = () => {
     return data ? JSON.parse(data) : [];
   });
   const [filterStatus, setFilterStatus] = useState("");
+  const [name, setName] = useState("");
 
   function addToQueue(customer) {
     setQueue((prev) => [
@@ -31,10 +32,12 @@ const App = () => {
     setQueue(newVal);
   }
 
-  // Derived state: filtered view of queue based on selected status
-  const filteredQueue = filterStatus
-    ? queue.filter((customer) => customer.status === filterStatus)
-    : queue;
+  // Derived state: filtered view of queue based on selected status and name
+  const filteredQueue = queue.filter(
+    (customer) =>
+      (filterStatus ? customer.status === filterStatus : true) &&
+      (name ? customer.name.toLowerCase().includes(name.toLowerCase()) : true),
+  );
 
   useEffect(() => {
     localStorage.setItem("queue", JSON.stringify(queue)); // as local storage can only store strings
@@ -53,7 +56,7 @@ const App = () => {
             setFilterStatus={setFilterStatus}
             filterStatus={filterStatus}
           />
-          <Search />
+          <Search name={name} setName={setName} />
         </div>
 
         <main>
