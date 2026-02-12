@@ -8,11 +8,11 @@ const FilterStatus = ({  setFilterStatus,filterStatus }) => {
         <select
           value={filterStatus}
           onChange={(e) => {
-            setFilterStatus( prev => e.target.value);
+            setFilterStatus(e.target.value);
           }}
           id="option"
         >
-          <option value="" disabled>
+          <option value="" >
             All
           </option>
           <option value="waiting">Waiting</option>
